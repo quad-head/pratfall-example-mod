@@ -11,6 +11,10 @@ This repository demonstrates:
 
 Current engine version: Godot 4.6.1 .NET
 
+Join our Discord to ask questions, discuss modding, share your creations or get help from the community and developers.
+
+[![Join our Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.gg/b9EvyJKd97)
+
 ---
 
 # Mod Folder Structure
