@@ -124,6 +124,8 @@ Mod.dll
 
 and placed inside your mod folder.
 
+After exporting the mod, the compiled `.dll` (e.g. `Mod.dll`) can be found in the project under `.godot/mono/temp/bin`.
+
 ## ModInit()
 
 Called when the mod loads.
