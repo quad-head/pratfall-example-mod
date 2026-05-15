@@ -1,0 +1,9 @@
+{
+  "Name": "Example Mod",
+  "Version": "1.0.0",
+  "Description": "Your description here.",
+  "Author": "Me",
+  "PackageName": "ExampleMod.pck",
+  "Assembly": "ExampleMod.dll",
+  "AutoLoad": false
+}

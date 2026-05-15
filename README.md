@@ -1,2 +1,165 @@
-# pratfall-example-mod
-Example mod for Pratfall showing the basic mod structure, manifest.json setup and C# mod entrypoint.
+# Pratfall Example Mod
+
+Official example mod for Pratfall.
+
+This repository demonstrates:
+- Mod folder structure
+- `manifest.json`
+- Godot `.pck` packaging
+- C# mod entrypoints
+- Scene loading
+
+---
+
+# Mod Folder Structure
+
+Mods must be placed in:
+
+```text
+GameFolder/mods/<modname>
+```
+
+Example:
+
+```text
+GameFolder/mods/example_mod
+```
+
+Your mod folder should look like this:
+
+```text
+example_mod/
+├── manifest.json
+├── Mod.pck
+├── Mod.dll
+└── example_mod/
+    └── root.tscn
+```
+
+---
+
+# manifest.json
+
+Every mod requires a `manifest.json`.
+
+Example:
+
+```json
+{
+  "Name": "Example Mod",
+  "Version": "1.0.0",
+  "Description": "Your description",
+  "Author": "Me",
+  "PackageName": "ExampleMod.pck",
+  "Assembly": "ExampleMod.dll",
+  "AutoLoad": false
+}
+```
+
+---
+
+# Godot Assets (.pck)
+
+Mods can include Godot assets and scenes using a `.pck` package.
+
+The package must contain:
+- a folder with the same name as the mod
+- a `root.tscn` scene inside that folder
+
+Example:
+
+```text
+example_mod/
+└── root.tscn
+```
+
+The `root.tscn` scene will automatically be added by the game when the mod loads.
+
+## Exporting a .pck
+
+You can export `.pck` files directly from Godot.
+
+See the official Godot documentation:
+
+https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html
+
+The exported package should be named:
+
+```text
+Mod.pck
+```
+
+and placed inside your mod folder.
+
+---
+
+# C# Modding
+
+Mods can include C# code using a `.dll` assembly.
+
+The game looks for a static class named:
+
+```csharp
+ModEntry
+```
+
+with the following functions:
+
+```csharp
+public static class ModEntry
+{
+    public static void ModInit()
+    {
+    }
+
+    public static void ModDestroy()
+    {
+    }
+}
+```
+
+## ModInit()
+
+Called when the mod loads.
+
+Use this to:
+- initialize systems
+- register content
+- set up hooks/events
+
+## ModDestroy()
+
+Called when the mod unloads or the game closes.
+
+Use this to:
+- clean up resources
+- unregister events
+- stop background tasks
+
+The compiled assembly should be named:
+
+```text
+Mod.dll
+```
+
+and placed inside your mod folder.
+
+---
+
+# Final Structure Example
+
+```text
+GameFolder/
+└── mods/
+    └── example_mod/
+        ├── manifest.json
+        ├── Mod.pck
+        ├── Mod.dll
+```
+
+---
+
+# Warning
+
+Mod unloading may cause issues with C# code if references are still held in memory (for example static events, singletons, or Godot objects). In some cases, assemblies cannot be fully unloaded until the application restarts.
+```
