@@ -31,7 +31,7 @@ Your mod folder should look like this:
 example_mod/
 ├── manifest.json
 ├── Mod.pck
-├── Mod.dll
+└── Mod.dll
 ```
 
 ---
@@ -46,8 +46,8 @@ Example:
 {
   "Name": "Example Mod",
   "Version": "1.0.0",
-  "Description": "Your description",
-  "Author": "Me",
+  "Description": "My description",
+  "Author": "My name",
   "PackageName": "ExampleMod.pck",
   "Assembly": "ExampleMod.dll",
   "AutoLoad": false
@@ -141,6 +141,28 @@ Use this to:
 - clean up resources
 - unregister events
 - stop background tasks
+
+---
+
+# Command Line Arguments
+
+The game supports the following command line arguments for mod management:
+
+```text
+--qh-disable-mod-ui
+```
+
+Hides the mod UI button in the main menu.
+
+```text
+--qh-skip-mods
+```
+
+Skips loading all mods at game startup.
+
+These can be useful for debugging, testing vanilla behavior or running the game in a clean state.
+
+---
 
 # Warning
 
