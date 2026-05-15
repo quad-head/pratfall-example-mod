@@ -116,6 +116,14 @@ public static class ModEntry
 }
 ```
 
+The compiled assembly should be named:
+
+```text
+Mod.dll
+```
+
+and placed inside your mod folder.
+
 ## ModInit()
 
 Called when the mod loads.
@@ -134,15 +142,6 @@ Use this to:
 - unregister events
 - stop background tasks
 
-The compiled assembly should be named:
-
-```text
-Mod.dll
-```
-
-and placed inside your mod folder.
-
 # Warning
 
 Mod unloading may cause issues with C# code if references are still held in memory (for example static events, singletons, or Godot objects). In some cases, assemblies cannot be fully unloaded until the application restarts.
-```
