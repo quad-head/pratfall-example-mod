@@ -9,6 +9,8 @@ This repository demonstrates:
 - C# mod entrypoints
 - Scene loading
 
+Current engine version: Godot 4.6.1 .NET
+
 ---
 
 # Mod Folder Structure
