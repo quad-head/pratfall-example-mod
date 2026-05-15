@@ -32,8 +32,6 @@ example_mod/
 ├── manifest.json
 ├── Mod.pck
 ├── Mod.dll
-└── example_mod/
-    └── root.tscn
 ```
 
 ---
@@ -143,21 +141,6 @@ Mod.dll
 ```
 
 and placed inside your mod folder.
-
----
-
-# Final Structure Example
-
-```text
-GameFolder/
-└── mods/
-    └── example_mod/
-        ├── manifest.json
-        ├── Mod.pck
-        ├── Mod.dll
-```
-
----
 
 # Warning
 
