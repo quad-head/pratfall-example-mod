@@ -67,7 +67,7 @@ Example:
 Mods can include Godot assets and scenes using a `.pck` package.
 
 The package must contain:
-- a folder with the same name as the mod
+- a folder with the same name as the mod folder (e.g. exmaple_mod in this case)
 - a `root.tscn` scene inside that folder
 
 Example:
